@@ -10,7 +10,7 @@
 
 ---
 
-## 1. Project Overview
+##  Project Overview
 
 This project demonstrates an end-to-end workflow for converting raw transactional data into **customer analytics, machine-learning-based segmentation, business recommendations, and an interactive dashboard**.
 
@@ -24,7 +24,7 @@ The framework is designed to be applicable across customer-driven businesses suc
 
 ---
 
-## 2. Business Problem
+##  Business Problem
 
 Businesses generate large volumes of transactional data, but converting that data into actionable customer decisions remains challenging. This project addresses three core questions: **Who are the most valuable customers? Which customers are becoming inactive? What actions should be prioritized for each customer segment?**
 
@@ -32,7 +32,7 @@ The system combines customer analytics, segmentation, and rule-based recommendat
 
 ---
 
-## 3. Objectives
+##  Objectives
 
 | Objective | Focus |
 |---|---|
@@ -43,29 +43,19 @@ The system combines customer analytics, segmentation, and rule-based recommendat
 
 ---
 
-## 4. Dataset & Data Strategy
+##  Dataset & Data Strategy
 
 The project follows the structure of the **Brazilian E-Commerce Public Dataset by Olist**, covering customers, orders, products, payments, sellers, reviews, and locations.
 
 For lightweight and reproducible execution, the current implementation generates a **5,000-order synthetic dataset** following the relevant schema. The synthetic data is used for development, testing, CI/CD, and offline demonstration and is **not presented as actual Olist observations**.
 
-### Data Workflow
+##  Analytical Methodology
 
-```text
-Dataset Structure → Schema Definition → Synthetic/Public Data → Raw CSVs → Validation → Feature Engineering → Analytics Dataset
-```
-
-The pipeline can later be connected to the original public dataset without redesigning the core analytical workflow.
-
----
-
-## 5. Analytical Methodology
-
-### 5.1 Data Preparation
+### Data Preparation
 
 The pipeline handles **data ingestion, validation, cleaning, feature engineering, and analytical dataset generation**, including schema, missing-value, duplicate, date, and numerical checks.
 
-### 5.2 RFM Analysis
+###  RFM Analysis
 
 Customer value is quantified using **Recency, Frequency, and Monetary Value (RFM)**. Log transformation is applied where required to reduce the effect of highly skewed monetary distributions.
 
@@ -75,7 +65,7 @@ Customer value is quantified using **Recency, Frequency, and Monetary Value (RFM
 | **Frequency** | How often a customer purchased |
 | **Monetary** | How much a customer spent |
 
-### 5.3 Customer Segmentation
+###  Customer Segmentation
 
 Standardized RFM features are clustered using **K-Means** to identify customers with similar purchasing behavior.
 
@@ -87,7 +77,7 @@ Clusters are interpreted from their RFM characteristics to identify groups such 
 
 ---
 
-## 6. Decision Intelligence & System Architecture
+## Decision Intelligence & System Architecture
 
 The decision layer converts customer analytics into **interpretable business actions** by combining customer behavior, segment/risk status, and business rules.
 
@@ -105,7 +95,7 @@ Raw Transactions → Validation → Feature Engineering → Customer Analytics �
 
 ---
 
-## 7. Dashboard & Business Impact
+##  Dashboard & Business Impact
 
 The Streamlit dashboard provides three focused views: **Executive** metrics and trends, **Customer Intelligence** through RFM and segmentation, and **Advanced Analytics** for cluster and segment analysis.
 
@@ -125,132 +115,7 @@ The platform supports **high-value customer identification, early inactivity det
 
 > **Note:** Since the project uses public/synthetic data, no real-world ROI is claimed. Impact estimates are scenario-based; actual business impact requires deployment and controlled experimentation such as A/B testing.
 
----
-
-## 8. Technology Stack
-
-| Category | Technologies |
-|---|---|
-| **Programming** | Python 3.10+ |
-| **Data Analysis** | Pandas, NumPy |
-| **Machine Learning** | Scikit-learn, K-Means |
-| **Statistics** | SciPy |
-| **Visualization & UI** | Matplotlib, Streamlit |
-| **Development & Deployment** | Git, GitHub, Pytest, Docker |
-
----
-
-## 9. Project Structure
-
-```text
-customer-analytics-dashboard/
-│
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── notebooks/
-│
-├── src/
-│   ├── data/
-│   ├── analytics/
-│   ├── features/
-│   ├── models/
-│   └── recommendations/
-│
-├── scripts/
-│   └── pipeline.py
-│
-├── dashboard/
-│   └── app.py
-│
-├── reports/
-│   └── figures/
-│
-├── screenshots/
-├── tests/
-├── docs/
-│
-├── requirements.txt
-├── Dockerfile
-├── .gitignore
-└── README.md
-```
-
----
-
-## 10. Reproducing the Project
-
-### Requirements
-
-- Python 3.10+
-- 4 GB RAM
-- Windows, macOS, or Linux
-- No GPU required
-
-### Setup
-
-```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd customer-analytics-dashboard
-
-python -m venv .venv
-```
-
-**Windows:**
-
-```bash
-.venv\Scripts\activate
-```
-
-**macOS / Linux:**
-
-```bash
-source .venv/bin/activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the analytical pipeline:
-
-```bash
-python scripts/pipeline.py
-```
-
-Launch the dashboard:
-
-```bash
-streamlit run dashboard/app.py
-```
-
----
-
-## 11. Generated Outputs
-
-```text
-data/raw/
-├── orders.csv
-├── customers.csv
-└── ...
-
-data/processed/
-├── rfm_segments.csv
-└── ...
-
-reports/figures/
-├── revenue_trend.png
-├── segment_distribution.png
-├── segmentation_scatter.png
-└── ...
-```
-
----
-
-## 12. Validation & Testing
+##  Validation & Testing
 
 The pipeline validates **data integrity, engineered features, segmentation consistency, model outputs, recommendation rules, and dashboard execution**.
 
@@ -312,10 +177,14 @@ Business Problem → Data → Analytics → Machine Learning → Decision Intell
 5. **Streamlit**  
    https://streamlit.io/
 
----
 
-## Author
+##  Tools & Technology 
 
-**Vishal Choudhari**
-
-*Data Science · Machine Learning · AI · Business Analytics · Data-Driven Decision Systems*
+| Category | Technologies |
+|---|---|
+| **Programming** | Python 3.10+ |
+| **Data Analysis** | Pandas, NumPy |
+| **Machine Learning** | Scikit-learn, K-Means |
+| **Statistics** | SciPy |
+| **Visualization & UI** | Matplotlib, Streamlit |
+| **Development & Deployment** | Git, GitHub, Pytest, Docker |
