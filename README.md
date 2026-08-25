@@ -1,26 +1,28 @@
 # Customer Analytics & Decision Dashboard
 
-> An end-to-end customer analytics and decision-support system that combines data engineering, business analytics, statistical analysis, machine learning, and interactive visualization to transform transactional data into actionable business decisions.
+> An end-to-end customer analytics and decision-support system that transforms transactional data into customer intelligence, actionable recommendations, and business insights.
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458.svg?logo=pandas)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-F7931E.svg?logo=scikit-learn)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E.svg?logo=scikit-learn)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B.svg?logo=streamlit)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C.svg)
+![Docker](https://img.shields.io/badge/Docker-Deployment-2496ED.svg?logo=docker)
 
 ---
 
-## Project Overview
+## 1. Project Overview
 
-**Customer Analytics & Decision Dashboard** demonstrates how raw transactional data can be transformed into customer intelligence, business insights, and actionable recommendations.
+This project demonstrates an end-to-end workflow for converting raw transactional data into **customer analytics, machine-learning-based segmentation, business recommendations, and an interactive dashboard**.
 
-The project uses an e-commerce dataset structure as its business case, while the analytical framework is designed to be transferable across customer-driven industries such as retail, financial services, technology, marketplaces, and subscription businesses.
-
-```markdown
 ### End-to-End Workflow
 
 ```text
 Raw Data → Validation → Feature Engineering → RFM Analysis → K-Means Segmentation → Decision Engine → Recommendations → Dashboard
+```
+
+The framework is designed to be applicable across customer-driven businesses such as **retail, e-commerce, finance, technology, marketplaces, and subscription services**.
+
+---
 
 ## 2. Business Problem
 
@@ -43,12 +45,19 @@ The system combines customer analytics, segmentation, and rule-based recommendat
 
 ## 4. Dataset & Data Strategy
 
-The project follows the structure of the **Brazilian E-Commerce Public Dataset by Olist**, covering customers, orders, products, payments, sellers, reviews, and locations. For lightweight and reproducible execution, the current implementation generates a **5,000-order synthetic dataset** following the relevant schema. The synthetic data is used for development, testing, CI/CD, and offline demonstration and is **not presented as actual Olist observations**.
+The project follows the structure of the **Brazilian E-Commerce Public Dataset by Olist**, covering customers, orders, products, payments, sellers, reviews, and locations.
+
+For lightweight and reproducible execution, the current implementation generates a **5,000-order synthetic dataset** following the relevant schema. The synthetic data is used for development, testing, CI/CD, and offline demonstration and is **not presented as actual Olist observations**.
 
 ### Data Workflow
 
 ```text
 Dataset Structure → Schema Definition → Synthetic/Public Data → Raw CSVs → Validation → Feature Engineering → Analytics Dataset
+```
+
+The pipeline can later be connected to the original public dataset without redesigning the core analytical workflow.
+
+---
 
 ## 5. Analytical Methodology
 
@@ -72,6 +81,11 @@ Standardized RFM features are clustered using **K-Means** to identify customers 
 
 ```text
 Transactions → RFM Features → Transformation → Standardization → K-Means → Customer Segments
+```
+
+Clusters are interpreted from their RFM characteristics to identify groups such as **high-value, regular, low-engagement, and at-risk customers**.
+
+---
 
 ## 6. Decision Intelligence & System Architecture
 
@@ -79,26 +93,41 @@ The decision layer converts customer analytics into **interpretable business act
 
 ```text
 Customer Data → Behavior → Segment/Risk → Business Rule → Recommended Action → KPI
+```
 
 The modular architecture connects data processing, analytics, decision logic, and presentation into a reproducible workflow.
 
+```text
 Raw Transactions → Validation → Feature Engineering → Customer Analytics → Decision Engine → Dashboard
+```
 
-RFM and K-Means generate customer intelligence, the decision engine converts insights into recommendations, and Streamlit presents the results through an interactive dashboard.
+**RFM and K-Means** generate customer intelligence, the **decision engine** converts insights into recommendations, and **Streamlit** presents the results through an interactive dashboard.
 
-Dashboard & Business Impact
+---
 
-The Streamlit dashboard provides three focused views: Executive metrics and trends, Customer Intelligence through RFM and segmentation, and Advanced Analytics for cluster and segment analysis.
+## 7. Dashboard & Business Impact
 
-Revenue Trend
+The Streamlit dashboard provides three focused views: **Executive** metrics and trends, **Customer Intelligence** through RFM and segmentation, and **Advanced Analytics** for cluster and segment analysis.
 
-Customer Segment Distribution
+### Revenue Trend
 
-RFM Customer Segmentation
+![Revenue Trend](reports/figures/revenue_trend.png)
 
-The platform supports high-value customer identification, early inactivity detection, targeted retention, customer prioritization, and reduced manual analysis.
+### Customer Segment Distribution
 
-## Tools & Technology 
+![Customer Segment Distribution](reports/figures/segment_distribution.png)
+
+### RFM Customer Segmentation
+
+![RFM Segmentation](reports/figures/segmentation_scatter.png)
+
+The platform supports **high-value customer identification, early inactivity detection, targeted retention, customer prioritization, and reduced manual analysis**.
+
+> **Note:** Since the project uses public/synthetic data, no real-world ROI is claimed. Impact estimates are scenario-based; actual business impact requires deployment and controlled experimentation such as A/B testing.
+
+---
+
+## 8. Technology Stack
 
 | Category | Technologies |
 |---|---|
@@ -109,7 +138,119 @@ The platform supports high-value customer identification, early inactivity detec
 | **Visualization & UI** | Matplotlib, Streamlit |
 | **Development & Deployment** | Git, GitHub, Pytest, Docker |
 
-Validation & Testing
+---
+
+## 9. Project Structure
+
+```text
+customer-analytics-dashboard/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/
+│
+├── src/
+│   ├── data/
+│   ├── analytics/
+│   ├── features/
+│   ├── models/
+│   └── recommendations/
+│
+├── scripts/
+│   └── pipeline.py
+│
+├── dashboard/
+│   └── app.py
+│
+├── reports/
+│   └── figures/
+│
+├── screenshots/
+├── tests/
+├── docs/
+│
+├── requirements.txt
+├── Dockerfile
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 10. Reproducing the Project
+
+### Requirements
+
+- Python 3.10+
+- 4 GB RAM
+- Windows, macOS, or Linux
+- No GPU required
+
+### Setup
+
+```bash
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd customer-analytics-dashboard
+
+python -m venv .venv
+```
+
+**Windows:**
+
+```bash
+.venv\Scripts\activate
+```
+
+**macOS / Linux:**
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the analytical pipeline:
+
+```bash
+python scripts/pipeline.py
+```
+
+Launch the dashboard:
+
+```bash
+streamlit run dashboard/app.py
+```
+
+---
+
+## 11. Generated Outputs
+
+```text
+data/raw/
+├── orders.csv
+├── customers.csv
+└── ...
+
+data/processed/
+├── rfm_segments.csv
+└── ...
+
+reports/figures/
+├── revenue_trend.png
+├── segment_distribution.png
+├── segmentation_scatter.png
+└── ...
+```
+
+---
+
+## 12. Validation & Testing
 
 The pipeline validates **data integrity, engineered features, segmentation consistency, model outputs, recommendation rules, and dashboard execution**.
 
@@ -117,8 +258,15 @@ Run the test suite with:
 
 ```bash
 pytest
-Roadmap
+```
+
+---
+
+## 13. Roadmap
+
+```text
 Analytics MVP → Predictive Analytics → Decision Intelligence → Experimentation → Productionization
+```
 
 | Phase | Development |
 |---|---|
@@ -128,27 +276,46 @@ Analytics MVP → Predictive Analytics → Decision Intelligence → Experimenta
 | **Experimentation** | A/B testing and impact measurement |
 | **Productionization** | APIs, monitoring, retraining, cloud and real-time deployment |
 
-## Limitations
+---
+
+## 14. Limitations
 
 The project uses **synthetic data** unless the public Olist dataset is loaded, so results may not fully reflect real-world customer behavior. RFM and K-Means provide **descriptive, not causal, insights**, and recommendations require business validation.
 
 Real-world ROI requires **deployment, controlled experimentation, and continuous monitoring**.
 
-## Results
+---
+
+## 15. Results
 
 The project demonstrates an end-to-end **reproducible, interpretable, and business-oriented data product**, integrating analytics, machine learning, decision logic, and interactive visualization rather than functioning as an isolated ML model.
 
+```text
+Business Problem → Data → Analytics → Machine Learning → Decision Intelligence → Dashboard → Business Action
+```
+
 ---
 
-## References
+## 16. References
 
 1. **Olist — Brazilian E-Commerce Public Dataset**  
    https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
-2. **MacQueen, J. (1967)** — *Some Methods of Classification and Analysis of Multivariate Observations.*
+2. **MacQueen, J. (1967)** — *Some Methods for Classification and Analysis of Multivariate Observations.*
 
-3. **Scikit-learn** — https://scikit-learn.org/
+3. **Scikit-learn**  
+   https://scikit-learn.org/
 
-4. **Pandas** — https://pandas.pydata.org/
+4. **Pandas**  
+   https://pandas.pydata.org/
 
-5. **Streamlit** — https://streamlit.io/
+5. **Streamlit**  
+   https://streamlit.io/
+
+---
+
+## Author
+
+**Vishal Choudhari**
+
+*Data Science · Machine Learning · AI · Business Analytics · Data-Driven Decision Systems*
