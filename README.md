@@ -10,7 +10,7 @@
 
 ---
 
-## 1. Project Overview
+## Project Overview
 
 **Customer Analytics & Decision Dashboard** demonstrates how raw transactional data can be transformed into customer intelligence, business insights, and actionable recommendations.
 
@@ -18,7 +18,7 @@ The project uses an e-commerce dataset structure as its business case, while the
 
 ### End-to-End Workflow
 
-```text
+`text
 Raw Data → Validation → Feature Engineering → RFM Analysis → K-Means Segmentation → Decision Engine → Recommendations → Dashboard
 
 ## 2. Business Problem
