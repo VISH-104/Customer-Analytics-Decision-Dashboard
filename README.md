@@ -18,7 +18,7 @@ The project uses an e-commerce dataset structure as its business case, while the
 
 ### End-to-End Workflow
 
-`text
+`''text
 Raw Data → Validation → Feature Engineering → RFM Analysis → K-Means Segmentation → Decision Engine → Recommendations → Dashboard
 
 ## 2. Business Problem
