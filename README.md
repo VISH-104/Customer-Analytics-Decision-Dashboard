@@ -99,35 +99,17 @@ Raw Transactions → Validation → Feature Engineering → Customer Analytics �
 
 The Streamlit dashboard provides three focused views: **Executive** metrics and trends, **Customer Intelligence** through RFM and segmentation, and **Advanced Analytics** for cluster and segment analysis.
 
-### Revenue Trend
-
-![Revenue Trend](reports/figures/revenue_trend.png)
-
-### Customer Segment Distribution
-
-![Customer Segment Distribution](reports/figures/segment_distribution.png)
-
-### RFM Customer Segmentation
-
-![RFM Segmentation](reports/figures/segmentation_scatter.png)
+**Revenue Trend**
+**Customer Segment Distribution**
+**RFM Customer Segmentation**
 
 The platform supports **high-value customer identification, early inactivity detection, targeted retention, customer prioritization, and reduced manual analysis**.
 
 > **Note:** Since the project uses public/synthetic data, no real-world ROI is claimed. Impact estimates are scenario-based; actual business impact requires deployment and controlled experimentation such as A/B testing.
 
-##  Validation & Testing
-
 The pipeline validates **data integrity, engineered features, segmentation consistency, model outputs, recommendation rules, and dashboard execution**.
 
-Run the test suite with:
-
-```bash
-pytest
-```
-
----
-
-## 13. Roadmap
+##  Roadmap
 
 ```text
 Analytics MVP → Predictive Analytics → Decision Intelligence → Experimentation → Productionization
@@ -141,17 +123,13 @@ Analytics MVP → Predictive Analytics → Decision Intelligence → Experimenta
 | **Experimentation** | A/B testing and impact measurement |
 | **Productionization** | APIs, monitoring, retraining, cloud and real-time deployment |
 
----
-
-## 14. Limitations
+## Limitations
 
 The project uses **synthetic data** unless the public Olist dataset is loaded, so results may not fully reflect real-world customer behavior. RFM and K-Means provide **descriptive, not causal, insights**, and recommendations require business validation.
 
 Real-world ROI requires **deployment, controlled experimentation, and continuous monitoring**.
 
----
-
-## 15. Results
+##  Results
 
 The project demonstrates an end-to-end **reproducible, interpretable, and business-oriented data product**, integrating analytics, machine learning, decision logic, and interactive visualization rather than functioning as an isolated ML model.
 
@@ -161,7 +139,7 @@ Business Problem → Data → Analytics → Machine Learning → Decision Intell
 
 ---
 
-## 16. References
+## References
 
 1. **Olist — Brazilian E-Commerce Public Dataset**  
    https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
