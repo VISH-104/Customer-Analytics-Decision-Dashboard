@@ -2,14 +2,6 @@
 
 > An end-to-end customer analytics and decision-support system that transforms transactional data into customer intelligence, actionable recommendations, and business insights.
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458.svg?logo=pandas)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E.svg?logo=scikit-learn)
-![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B.svg?logo=streamlit)
-![Docker](https://img.shields.io/badge/Docker-Deployment-2496ED.svg?logo=docker)
-
----
-
 ##  Project Overview
 
 This project demonstrates an end-to-end workflow for converting raw transactional data into **customer analytics, machine-learning-based segmentation, business recommendations, and an interactive dashboard**.
